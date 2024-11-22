@@ -3,7 +3,6 @@ include:
   ref: v2.13.0
   file: ci/template.gitlab-ci.yml
 - local: iiidevops/jobs/*.yml
-
 stages:
 - initial
 - scan
@@ -11,12 +10,10 @@ stages:
 - deploy
 - test
 - userjobs
-
 Test--SonarQube source code scan:
   variables:
     iiidevops: sonarqube
     CHART_TYPE: normal
-
 Test--Semgrep SAST code scan:
   variables:
     iiidevops: semgrep
@@ -34,20 +31,16 @@ Test--Check-CN scan:
 Test--Checkmarx source code scan:
   variables:
     iiidevops: checkmarx
-
 Build image:
   variables:
     iiidevops: build
     DOCKERFILE_PATH: Dockerfile
-
 Build--Scan docker image:
   variables:
     iiidevops: build
-
 Deploy--Set environment and wait deployment:
   variables:
     iiidevops: deploy
-
 Deploy--Web:
   variables:
     iiidevops: deploy
@@ -55,27 +48,21 @@ Deploy--Web:
     CHART_PROXY_BODY_SIZE: 1m
     CHART_VOLUME_ENABLED: 'false'
     CHART_VOLUME_PATH: /usr/src
-
 Test--Anchore SBOM:
   variables:
     iiidevops: anchore
-
 Test--ZAP:
   variables:
     iiidevops: zap
     CHART_WEB_PORT: 8080
-
 Test--WebInspect:
   variables:
     iiidevops: webinspect
-
 Test--Postman:
   variables:
     iiidevops: postman
     CHART_WEB_PORT: 8080
-
 Test--Sideex:
   variables:
     iiidevops: sideex
     CHART_WEB_PORT: 8080
-
