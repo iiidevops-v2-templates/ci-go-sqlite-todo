@@ -1,6 +1,6 @@
 include:
 - project: iiidevops-templates/ci-template
-  ref: v2.12.3
+  ref: v2.13.0
   file: ci/template.gitlab-ci.yml
 - local: iiidevops/jobs/*.yml
 
@@ -21,11 +21,15 @@ Test--Semgrep SAST code scan:
   variables:
     iiidevops: semgrep
     SEARCH_MAX_DEPTH: 20
-    SAST_EXCLUDED_PATHS: "spec, test, tests, tmp, iiidevops, **/*.md"
+    SAST_EXCLUDED_PATHS: spec, test, tests, tmp, iiidevops, **/*.md
 
 Test--Anchore SBOM source code scan:
   variables:
     iiidevops: anchore-code
+
+Test--Check-CN scan:
+  variables:
+    iiidevops: checkcn
 
 Test--Checkmarx source code scan:
   variables:
