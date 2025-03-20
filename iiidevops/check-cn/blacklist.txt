@@ -1,0 +1,12 @@
+# 絕對路徑
+# /tmp/app/blacklist.txt
+
+# 相對 CI_PROJECT_DIR 路徑
+# iiidevops/check-cn/traditional.txt
+
+# 支援wildcard
+# iiidevops/check-cn/*.txt
+
+# 若沒有父路徑則排除所有路徑的該副檔名
+# 排除所有pdf檔
+*.pdf
