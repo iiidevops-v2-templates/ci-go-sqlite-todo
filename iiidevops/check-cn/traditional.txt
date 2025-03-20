@@ -1,0 +1,10 @@
+# Additional traditional Chinese characters
+# Each line can contain one or more characters
+# Empty lines and comments (starting with #) are ignored
+臺
+灣
+國
+學
+實
+體
+#刚
